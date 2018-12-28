@@ -4,16 +4,16 @@
 # debuginfo package for the empty main package.
 %global debug_package %{nil}
 
-%global commit b3f3d4950030
+%global commit 323c052e1731
 
 Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
-Version: 3.3.5
-Release: 2
+Version: 3.3.7
+Release: 1
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
 URL: http://eigen.tuxfamily.org/
-Source0: http://bitbucket.org/eigen/eigen/get/%{name}-%{name}-%{commit}.tar.bz2
+Source0: http://bitbucket.org/eigen/eigen/get/%{version}.tar.bz2
 BuildRequires: cmake >= 2.6.1
 BuildRequires: doxygen
 BuildRequires: fftw-devel
@@ -23,7 +23,6 @@ BuildRequires: graphviz
 BuildRequires: gsl-devel
 BuildRequires: libatlas-devel
 BuildRequires: mpfr-devel
-BuildRequires: qt4-devel
 BuildRequires: SuperLU-devel
 BuildRequires: texlive
 BuildRequires: pkgconfig(xmu)
