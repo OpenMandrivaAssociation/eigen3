@@ -18,7 +18,7 @@ BuildRequires: cmake >= 2.6.1
 BuildRequires: doxygen
 BuildRequires: fftw-devel
 BuildRequires: glew-devel
-BuilsRequires: gmp-devel
+BuildRequires: gmp-devel
 BuildRequires: ghostscript-common
 BuildRequires: graphviz
 BuildRequires: gsl-devel
