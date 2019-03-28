@@ -20,7 +20,12 @@ BuildRequires: cmake >= 2.6.1
 BuildRequires: doxygen
 BuildRequires: pkgconfig(fftw3)
 BuildRequires: pkgconfig(glew)
+BuildRequires: pkgconfig(glut)
 BuildRequires: gmp-devel
+BuildRequires: umfpack-devel
+BuildRequires: cholmod-devel
+BuildRequires: libspqr-devel
+BuildRequires: boost-devel
 BuildRequires: ghostscript-common
 BuildRequires: graphviz
 BuildRequires: pkgconfig(gsl)
