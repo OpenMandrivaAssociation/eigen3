@@ -18,19 +18,19 @@ URL: http://eigen.tuxfamily.org/
 Source0: http://bitbucket.org/eigen/eigen/get/%{version}.tar.bz2
 BuildRequires: cmake >= 2.6.1
 BuildRequires: doxygen
-BuildRequires: fftw-devel
-BuildRequires: glew-devel
+BuildRequires: pkgconfig(fftw3)
+BuildRequires: pkgconfig(glew)
 BuildRequires: gmp-devel
 BuildRequires: ghostscript-common
 BuildRequires: graphviz
-BuildRequires: gsl-devel
-BuildRequires: libatlas-devel
-BuildRequires: mpfr-devel
+BuildRequires: pkgconfig(gsl)
+BuildRequires: pkgconfig(atlas)
+BuildRequires: pkgconfig(mpfr)
 BuildRequires: SuperLU-devel
 BuildRequires: texlive
 BuildRequires: pkgconfig(xmu)
 
-%description 
+%description
 Eigen is a lightweight C++ template library for vector and matrix
 math, a.k.a. linear algebra.
 
@@ -47,7 +47,7 @@ Eigen is a lightweight C++ template library for vector and matrix
 math, a.k.a. linear algebra.
 
 %prep
-%setup -q -n eigen-eigen-%{commit}
+%autosetup -n eigen-eigen-%{commit} -p1
 
 %build
 %ifarch %arm
