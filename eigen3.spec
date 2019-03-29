@@ -6,10 +6,12 @@
 
 %global commit 323c052e1731
 
+%global optflags %{optflags} -O3
+
 Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
 Version: 3.3.7
-Release: 1
+Release: 2
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
 URL: http://eigen.tuxfamily.org/
@@ -55,13 +57,13 @@ export CXX=g++
 
 %cmake -DBLAS_LIBRARIES="cblas" -DSUPERLU_INCLUDES=%{_includedir}/SuperLU
 
-%make
+%make_build
 
 rm -f doc/html/installdox
 rm -f doc/html/unsupported/installdox
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 %files devel
 %doc COPYING*
