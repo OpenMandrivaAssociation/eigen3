@@ -11,7 +11,7 @@
 Summary: Lightweight C++ template library for vector and matrix math
 Name: eigen3
 Version: 3.4.0
-Release: 2
+Release: 3
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
 URL: http://eigen.tuxfamily.org/
