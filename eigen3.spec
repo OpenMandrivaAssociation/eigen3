@@ -14,7 +14,7 @@ Version: 3.4.0
 Release: 3
 Group: System/Libraries
 License: LGPLv3+ or GPLv2+
-URL: http://eigen.tuxfamily.org/
+URL: https://eigen.tuxfamily.org/
 Source0: https://gitlab.com/libeigen/eigen/-/archive/%{version}/eigen-%{version}.tar.bz2
 BuildRequires: cmake >= 2.6.1
 BuildRequires: doxygen
