@@ -1,3 +1,8 @@
+# For now -- since C code (built with clang) and
+# Fortran code (built with gfortran) are linked
+# together, LTO object files don't work
+%global _disable_lto 0
+
 # The (empty) main package is arch, to have the package built and tests run
 # on all arches, but the actual result package is the noarch -devel subpackge.
 # Debuginfo packages are disabled to prevent rpmbuild from generating an empty
@@ -82,7 +87,8 @@ math, a.k.a. linear algebra.
 %endif
 %{_includedir}/eigen3/*
 %{_datadir}/pkgconfig/*.pc
-%dir %{_datadir}/cmake/%{name}
+%dir %{_datadir}/cmake/%{name}/
+%{_datadir}/cmake/%{name}/*
 
 #---------------------------------------------------------------------------
 
@@ -90,8 +96,10 @@ math, a.k.a. linear algebra.
 %autosetup -p1
 
 %build
-export CC=gcc
-export CXX=g++
+#ifarch %arm
+#export CC=gcc
+#export CXX=g++
+#endif
 export FC=gfortran
 
 
