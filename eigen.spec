@@ -47,7 +47,7 @@ BuildRequires:	pkgconfig(libsparsehash)
 BuildRequires:	pkgconfig(mpfr)
 BuildRequires:	pkgconfig(xmu)
 %if %{with scotch}
-BuildRequires:	scotch-devel
+BuildRequires:	cmake(scotch)
 %endif
 %if %{with suitesparse}
 BuildRequires:	cholmod-devel
