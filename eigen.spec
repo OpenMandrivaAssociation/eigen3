@@ -24,7 +24,7 @@
 Summary:	Lightweight C++ template library for vector and matrix math
 Name:		eigen
 Version:	3.4.0
-Release:	4
+Release:	5
 Group:		System/Libraries
 License:	LGPLv3+ or GPLv2+
 URL:		https://eigen.tuxfamily.org/
@@ -40,7 +40,7 @@ BuildRequires:	metis-devel
 %endif
 BuildRequires:	pkgconfig(gsl)
 BuildRequires:	pkgconfig(fftw3)
-BuildRequires:	pkgconfig(flexiblas)
+BuildRequires:	pkgconfig(%{blaslib})
 BuildRequires:	pkgconfig(glew)
 BuildRequires:	pkgconfig(glut)
 BuildRequires:	pkgconfig(libsparsehash)
@@ -72,8 +72,10 @@ Summary:	Lightweight C++ template library for vector and matrix math
 Group:		Development/C++
 BuildArch:	noarch
 Obsoletes:	%{name}3 <= %{EVRD}
+Obsoletes:	%{name}3-devel <= %{EVRD}
 # not *strictly* a -static pkg, but the results are the same
 Provides:	%{name}-static = %{version}-%{release}
+Requires:	pkgconfig(%{blaslib})
 
 %description devel
 Eigen is a lightweight C++ template library for vector and matrix
