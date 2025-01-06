@@ -24,7 +24,7 @@
 Summary:	Lightweight C++ template library for vector and matrix math
 Name:		eigen
 Version:	3.4.0
-Release:	5
+Release:	6
 Group:		System/Libraries
 License:	LGPLv3+ or GPLv2+
 URL:		https://eigen.tuxfamily.org/
@@ -89,8 +89,8 @@ math, a.k.a. linear algebra.
 %endif
 %{_includedir}/eigen3/*
 %{_datadir}/pkgconfig/*.pc
-%dir %{_datadir}/cmake/%{name}/
-%{_datadir}/cmake/%{name}/*
+%dir %{_datadir}/cmake/Eigen3/
+%{_datadir}/cmake/Eigen3/*
 
 #---------------------------------------------------------------------------
 
@@ -106,7 +106,7 @@ export FC=gfortran
 
 
 %cmake -Wno-dev \
-	-DCMAKEPACKAGE_INSTALL_DIR=%{_datadir}/cmake/%{name} \
+	-DCMAKEPACKAGE_INSTALL_DIR=%{_datadir}/cmake/Eigen3 \
 	-DBLAS_LIBRARIES="%{blaslib}" \
 	-DBLA_VENDOR=-DBLA_VENDOR=FlexiBLAS \
 	-DBUILD_TESTING:BOOL=%{?with_tests:ON}%{?!with_tests:OFF} \
@@ -131,4 +131,3 @@ pushd build
 ctest
 done
 %endif
-
