@@ -36,6 +36,7 @@ Source0:	https://gitlab.com/libeigen/eigen/-/archive/%{version}/%{name}-%{versio
 BuildRequires:	cmake ninja
 BuildRequires:	boost-devel
 BuildRequires:	gmp-devel
+BuildRequires:	gcc-gfortran
 %if %{with SuperLU}
 BuildRequires:	cmake(superlu)
 %endif
