@@ -28,7 +28,7 @@
 Summary:	Lightweight C++ template library for vector and matrix math
 Name:		eigen
 Version:	3.4.1
-Release:	1
+Release:	2
 Group:		System/Libraries
 License:	LGPLv3+ or GPLv2+
 URL:		https://eigen.tuxfamily.org/
@@ -65,6 +65,9 @@ BuildRequires:	ghostscript-common
 BuildRequires:	graphviz
 BuildRequires:	texlive
 %endif
+
+%patchlist
+eigen-3.4.1-dont-use-undefined-macro.patch
 
 %description
 Eigen is a lightweight C++ template library for vector and matrix
