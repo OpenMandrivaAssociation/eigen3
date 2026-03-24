@@ -1,12 +1,12 @@
-diff -up eigen-3.4.1/Eigen/src/Core/util/ConfigureVectorization.h.omv~ eigen-3.4.1/Eigen/src/Core/util/ConfigureVectorization.h
---- eigen-3.4.1/Eigen/src/Core/util/ConfigureVectorization.h.omv~	2025-10-20 18:34:35.071328321 +0200
-+++ eigen-3.4.1/Eigen/src/Core/util/ConfigureVectorization.h	2025-10-20 18:34:56.681406752 +0200
-@@ -445,7 +445,7 @@
+diff -up eigen-5.0.1/Eigen/src/Core/util/ConfigureVectorization.h.1~ eigen-5.0.1/Eigen/src/Core/util/ConfigureVectorization.h
+--- eigen-5.0.1/Eigen/src/Core/util/ConfigureVectorization.h.1~	2025-11-08 21:44:56.000000000 +0100
++++ eigen-5.0.1/Eigen/src/Core/util/ConfigureVectorization.h	2026-03-24 21:44:08.984503828 +0100
+@@ -462,7 +462,7 @@ extern "C" {
  #define EIGEN_VECTORIZE_FMA
  #endif
  
--#if defined(__F16C__) && !defined(EIGEN_GPUCC) && (!EIGEN_COMP_CLANG_STRICT || EIGEN_COMP_CLANG>=380)
-+#if defined(__F16C__) && !defined(EIGEN_GPUCC) && (EIGEN_COMP_CLANG>=380)
-   // We can use the optimized fp16 to float and float to fp16 conversion routines
-   #define EIGEN_HAS_FP16_C
+-#if defined(__F16C__) && !defined(EIGEN_GPUCC) && (!EIGEN_COMP_CLANG_STRICT || EIGEN_CLANG_STRICT_AT_LEAST(3, 8, 0))
++#if defined(__F16C__) && !defined(EIGEN_GPUCC) && (EIGEN_CLANG_STRICT_AT_LEAST(3, 8, 0))
+ // We can use the optimized fp16 to float and float to fp16 conversion routines
+ #define EIGEN_HAS_FP16_C
  
